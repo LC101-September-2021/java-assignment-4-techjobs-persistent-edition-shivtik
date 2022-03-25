@@ -1,8 +1,8 @@
 package org.launchcode.techjobs.persistent.models;
 
 import org.hibernate.validator.constraints.Length;
-import org.springframework.data.annotation.Id;
-
+//import org.springframework.data.annotation.Id;
+import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.MappedSuperclass;
 import javax.validation.constraints.NotNull;

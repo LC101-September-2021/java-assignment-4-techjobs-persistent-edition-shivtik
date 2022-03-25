@@ -2,6 +2,8 @@
 SHOW COLUMNS FROM job;
 
 -- Part 2: Test it with SQL
+SELECT * from employer
+WHERE LOCATION = 'St. Louis City'
 
 -- Part 3: Test it with SQL
 

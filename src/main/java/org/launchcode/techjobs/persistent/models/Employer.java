@@ -1,15 +1,29 @@
 package org.launchcode.techjobs.persistent.models;
 
-import javax.persistence.Entity;
-import javax.persistence.OneToOne;
+import org.hibernate.validator.constraints.Length;
+
+import javax.persistence.*;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Employer extends AbstractEntity {
 
+    @Id
+    @GeneratedValue
+    private int id;
+
+    @OneToMany
+    @JoinColumn
+    private List<Job> jobs = new ArrayList<>();
+
     public Employer() {
     }
 
-    @OneToOne
+    @NotNull
+//    @Valid
     private String location;
 
     public String getLocation() {
