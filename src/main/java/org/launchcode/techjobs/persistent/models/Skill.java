@@ -9,10 +9,6 @@ import java.util.List;
 @Entity
 public class Skill extends AbstractEntity {
 
-    @Id
-    @GeneratedValue
-    private int id;
-
     @ManyToMany(mappedBy = "skills")
     private List<Job> jobs = new ArrayList<>();
 
