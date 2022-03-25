@@ -1,10 +1,10 @@
 package org.launchcode.techjobs.persistent.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.Valid;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Skill extends AbstractEntity {
@@ -12,6 +12,10 @@ public class Skill extends AbstractEntity {
     @Id
     @GeneratedValue
     private int id;
+
+    @ManyToMany(mappedBy = "skills")
+    private List<Job> jobs = new ArrayList<>();
+
 
     @Size(max = 500, message = "Description too long!")
     @Valid
