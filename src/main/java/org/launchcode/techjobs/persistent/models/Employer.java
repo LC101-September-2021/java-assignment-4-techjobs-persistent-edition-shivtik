@@ -4,7 +4,9 @@ import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
 import javax.validation.Valid;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,8 +20,8 @@ public class Employer extends AbstractEntity {
     public Employer() {
     }
 
+    @Size(min = 3, max=100)
     @NotNull
-//    @Valid
     private String location;
 
     public String getLocation() {
